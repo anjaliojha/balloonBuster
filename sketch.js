@@ -3,16 +3,7 @@ var bowImage, arrowImage, green_balloonImage, red_balloonImage, pink_balloonImag
 
 var score=0;
 
-redG = new Group();
-redG.add(red);
-blueG = new Group();
-blueG.add(blue);
-greenG = new Group();
-greenG.add(green);
-pinkG = new Group();
-pinkG.add(pink);
-arrowG = new Group();
-arrowG.add(arrow);
+
 
 function preload(){
   
@@ -40,6 +31,17 @@ function setup() {
   bow = createSprite(380,220,20,50);
   bow.addImage(bowImage); 
   bow.scale = 1;
+
+  redG = new Group();
+
+  blueG = new Group();
+
+  greenG = new Group();
+
+  pinkG = new Group();
+
+  arrowG = new Group();
+
   
    score = 0  
  }
@@ -96,6 +98,8 @@ function draw() {
   arrow.velocityX = -4;
   arrow.lifetime = 100;
   arrow.scale = 0.3;
+  
+arrowG.add(arrow);
 }
 
 function redBalloon() {
@@ -104,6 +108,7 @@ function redBalloon() {
   red.velocityX = 3;
   red.lifetime = 150;
   red.scale = 0.1;
+  redG.add(red);
 }
 
 function blueBalloon() {
@@ -112,6 +117,7 @@ function blueBalloon() {
   blue.velocityX = 3;
   blue.lifetime = 150;
   blue.scale = 0.1;
+  blueG.add(blue);
 }
 
 function greenBalloon() {
@@ -120,6 +126,7 @@ function greenBalloon() {
   green.velocityX = 3;
   green.lifetime = 150;
   green.scale = 0.1;
+  greenG.add(green);
 }
 
 function pinkBalloon() {
@@ -127,5 +134,9 @@ function pinkBalloon() {
   pink.addImage(pink_balloonImage);
   pink.velocityX = 3;
   pink.lifetime = 150;
-  pink.scale = 1
+  pink.scale = 1;
+  
+
+pinkG.add(pink);
+
 }
